@@ -21,7 +21,7 @@ public class FileStreamProducer {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         try (KafkaProducer<String, String> producer = new KafkaProducer<>(props)) {
-            String directoryPath = "/Users/aritra_ghosh/Downloads/archive/"; // Specify the directory path
+            String directoryPath = "/opt/archive/"; // Specify the directory path
             Files.list(Paths.get(directoryPath)).forEach(filePath -> {
                 if (Files.isRegularFile(filePath)) {
                     String filename = filePath.getFileName().toString();
